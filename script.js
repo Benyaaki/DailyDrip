@@ -21,4 +21,15 @@ let language='en';
 document.querySelector('.lang').addEventListener('click',()=>{language=language==='en'?'es':'en';document.documentElement.lang=language;document.querySelector('.lang').textContent=language==='en'?'ES':'EN';document.querySelectorAll('[data-i18n]').forEach(el=>{const value=translations[language][el.dataset.i18n];if(value)el.innerHTML=value})});
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.14});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 let ticking=false;function onScroll(){if(!ticking){requestAnimationFrame(()=>{const y=Math.min(scrollY,innerHeight);document.documentElement.style.setProperty('--hero-scale',1.04+y/innerHeight*.18);document.querySelector('.island').style.transform=`scale(${scrollY>80?.97:1})`;ticking=false});ticking=true}}addEventListener('scroll',onScroll,{passive:true});
-document.querySelector('.menu-toggle').addEventListener('click',()=>document.querySelector('#menu').scrollIntoView());
+const menuToggle=document.querySelector('.menu-toggle');
+const mobileMenu=document.querySelector('.mobile-menu');
+function setMobileMenu(open){
+  menuToggle.setAttribute('aria-expanded',String(open));
+  menuToggle.setAttribute('aria-label',open?'Close menu':'Open menu');
+  mobileMenu.setAttribute('aria-hidden',String(!open));
+  mobileMenu.classList.toggle('open',open);
+  document.body.classList.toggle('menu-open',open);
+}
+menuToggle.addEventListener('click',()=>setMobileMenu(menuToggle.getAttribute('aria-expanded')!=='true'));
+mobileMenu.querySelectorAll('a[href^="#"]').forEach(link=>link.addEventListener('click',()=>setMobileMenu(false)));
+document.addEventListener('keydown',event=>{if(event.key==='Escape')setMobileMenu(false)});
