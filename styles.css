@@ -29,3 +29,6 @@ footer{position:relative;padding-top:46px;background:var(--ink);border-top:10px 
 
 .footer-mark{display:flex;flex-direction:column;align-items:flex-start;line-height:1}.footer-mark .footer-word{display:block;line-height:.88}.footer-mark .footer-the{font-size:.14em;letter-spacing:0;position:absolute;left:-.5em;top:.1em;writing-mode:vertical-rl}.footer-mark small{position:static}.route-map text{paint-order:stroke;stroke:var(--blue);stroke-width:10px;stroke-linejoin:round}.route-map svg{padding:22px;overflow:visible}.route-map .route{stroke-linecap:round}.truck-dot{top:39%;left:57%}
 @media(max-width:800px){.footer-mark .footer-word{line-height:.94}.footer-mark small{margin-top:24px}.route-map svg{padding:12px}.route-map text{stroke-width:12px;font-size:12px}.truck-dot{top:40%;left:57%}}
+
+/* Keep the main footer wordmark horizontal; only “THE” is vertical. */
+.footer-mark>.footer-word{position:static;font-size:1em;writing-mode:horizontal-tb}
