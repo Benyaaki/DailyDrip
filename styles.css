@@ -45,3 +45,11 @@ footer{position:relative;padding-top:46px;background:var(--ink);border-top:10px 
 @media(max-width:1000px) and (min-width:801px){.route-map{height:560px}.route-trailer{left:30%;width:190px}.route-stop-two{right:2%}.route-stop-three{right:5%}}
 @media(max-width:800px){.route-map{height:570px;margin-top:45px;border-radius:30px}.route-map-head{left:20px;right:20px;top:20px}.route-map svg{inset:58px 3px 10px;width:calc(100% - 6px);height:calc(100% - 68px)}.route-stop-one{left:8%;top:19%}.route-stop-two{right:3%;top:55%}.route-stop-three{right:7%;bottom:8%}.route-stop b{font-size:10px}.route-stop small{font-size:6px}.route-trailer{left:27%;top:38%;width:175px}.route-note{left:20px;bottom:20px}}
 @media(prefers-reduced-motion:reduce){.route-trailer{animation:none}}
+
+/* Open route composition: keep the map lightweight and unframed. */
+.route-map{height:clamp(470px,38vw,590px);border:0;border-radius:0;overflow:visible;background:none;box-shadow:none}
+.route-map:before,.route-map:after,.route-map-head,.route-note{display:none}
+.route-map svg{inset:0;width:100%;height:100%}
+.route-trailer{left:39%;top:39%;width:175px}
+@media(max-width:1000px) and (min-width:801px){.route-trailer{left:36%;width:155px}}
+@media(max-width:800px){.route-map{height:520px;margin-top:30px;border-radius:0}.route-map svg{inset:0;width:100%;height:100%}.route-trailer{left:30%;top:40%;width:145px}.route-stop-two{top:54%}}
