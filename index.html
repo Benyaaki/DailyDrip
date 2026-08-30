@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=20260829" />
 </head>
 <body>
   <header class="nav-shell">
@@ -106,13 +106,18 @@
         <p data-i18n="find.body">The trailer moves between Hilton Head, Bluffton and local events. Weekly stops are announced on Instagram.</p>
         <a class="button button-dark" href="https://www.instagram.com/thedailydripsc/" target="_blank" rel="noreferrer"><span data-i18n="find.cta">See this week's stops</span><i class="icon-arrow" aria-hidden="true"></i></a>
       </div>
-      <div class="route-map" aria-label="Service area illustration">
-        <svg viewBox="0 0 620 500" role="img" aria-label="Route between Bluffton and Hilton Head">
-          <path class="route" d="M94 86 C260 32 234 220 372 208 S510 310 472 426" />
-          <circle cx="94" cy="86" r="9"/><circle cx="372" cy="208" r="9"/><circle cx="472" cy="426" r="9"/>
-          <text x="112" y="72">BLUFFTON</text><text x="408" y="264">EVENT POP-UP</text><text x="325" y="468">HILTON HEAD</text>
+      <div class="route-map" aria-label="The Daily Drip service area between Bluffton, local events and Hilton Head">
+        <div class="route-map-head"><span data-i18n="route.weekly">WEEKLY ROUTE</span><b>LOWCOUNTRY, SC</b></div>
+        <svg viewBox="0 0 620 520" role="img" aria-label="Route between Bluffton, event pop-ups and Hilton Head">
+          <path class="route-shadow" d="M98 92 C260 34 240 216 372 220 S528 318 474 438" />
+          <path class="route" d="M98 92 C260 34 240 216 372 220 S528 318 474 438" />
+          <circle cx="98" cy="92" r="12"/><circle cx="372" cy="220" r="12"/><circle cx="474" cy="438" r="12"/>
         </svg>
-        <div class="truck-dot">DD</div>
+        <div class="route-stop route-stop-one"><span>01</span><b>BLUFFTON</b><small data-i18n="route.weeklyStop">WEEKLY STOP</small></div>
+        <div class="route-stop route-stop-two"><span>02</span><b data-i18n="route.event">EVENT POP-UP</b><small data-i18n="route.crowd">WHERE THE CROWD IS</small></div>
+        <div class="route-stop route-stop-three"><span>03</span><b>HILTON HEAD</b><small data-i18n="route.weeklyStop">WEEKLY STOP</small></div>
+        <div class="route-trailer"><img src="assets/daily-drip-trailer-route.png" alt="The Daily Drip mobile coffee trailer"><span data-i18n="route.move">ON THE MOVE</span></div>
+        <div class="route-note" data-i18n="route.current">CURRENT STOPS<br>ON INSTAGRAM</div>
       </div>
     </section>
 
@@ -133,6 +138,6 @@
     <div class="footer-stamp" aria-hidden="true"><span>PULL TAB</span><b>DD</b><small>MADE TO MOVE</small></div>
     <div class="footer-meta"><span>UNOFFICIAL WEBSITE CONCEPT</span><span>HILTON HEAD · BLUFFTON, SC</span><span>© 2026</span></div>
   </footer>
-  <script src="script.js"></script>
+  <script src="script.js?v=20260829"></script>
 </body>
 </html>
